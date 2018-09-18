@@ -2,6 +2,8 @@
 
 Generate API documentation in vuepress markdown from [apidoc](https://github.com/apidoc/apidoc) data.
 
+Transplant from https://github.com/martinj/node-apidoc-markdown
+
 ## Installation
 
 	npm install apidoc-markdown-vuepress
