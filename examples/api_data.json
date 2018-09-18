@@ -1,0 +1,333 @@
+[
+  {
+    "type": "DELETE",
+    "url": "/api/v1/sections/:id",
+    "title": "删除模块",
+    "group": "用例模块",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 204 No Content",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/SectionController.php",
+    "groupTitle": "用例模块",
+    "name": "DeleteApiV1SectionsId"
+  },
+  {
+    "type": "GET",
+    "url": "/api/v1/sections",
+    "title": "模块列表",
+    "description": "<p>模块分为 3 层，<code>parent_id</code> 为上层模块 ID，最上层模块 <code>parent_id</code> 为 0。 <code>sort</code> 为排序字段，从小到大依次排序。</p>",
+    "group": "用例模块",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": false,
+            "field": "project_id",
+            "description": "<p>项目 ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": true,
+            "field": "name",
+            "description": "<p>模块名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": true,
+            "field": "parent_id",
+            "description": "<p>父级模块 ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "ids",
+            "description": "<p>模块 ID 列表，多个使用英文逗号 <code>,</code> 分隔</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 200 OK\n{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"客户模块\",\n      \"parent_id\": 0,\n      \"sort\": 1\n    },\n    {\n      \"id\": 3,\n      \"name\": \"用户管理\",\n      \"parent_id\": 1,\n      \"sort\": 2\n    },\n    {\n      \"id\": 3,\n      \"name\": \"鉴权相关\",\n      \"parent_id\": 3,\n      \"sort\": 1\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/SectionController.php",
+    "groupTitle": "用例模块",
+    "name": "GetApiV1Sections"
+  },
+  {
+    "type": "GET",
+    "url": "/api/v1/sections/:id",
+    "title": "模块详情",
+    "group": "用例模块",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 200 OK\n{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"客户模块\",\n    \"parent_id\": 0,\n    \"sort\": 1\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/SectionController.php",
+    "groupTitle": "用例模块",
+    "name": "GetApiV1SectionsId"
+  },
+  {
+    "type": "PATCH",
+    "url": "/api/v1/sections/:id",
+    "title": "更新模块",
+    "group": "用例模块",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": false,
+            "field": "parent_id",
+            "description": "<p>父模块ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>标题</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 200 OK\n{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"客户模块\",\n    \"parent_id\": 0,\n    \"sort\": 1\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/SectionController.php",
+    "groupTitle": "用例模块",
+    "name": "PatchApiV1SectionsId"
+  },
+  {
+    "type": "PATCH",
+    "url": "/api/v1/sections/move",
+    "title": "移动模块",
+    "group": "用例模块",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "ids",
+            "description": "<p>拖动的模块 ID 数组</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": true,
+            "field": "after_id",
+            "description": "<p>模块 ID，表示被移动的模块在其之后</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": true,
+            "field": "parent_id",
+            "description": "<p>父模块 ID <br>当不指定 <code>after_id</code> 或 <code>before_id</code> 的时候 parent_id 必填，表示移动到该模块下</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": true,
+            "field": "before_id",
+            "description": "<p>模块 ID，表示被移动的模块在其之前</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 200 OK\n{\n  \"data\": {\n    \"message\": \"success\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/SectionController.php",
+    "groupTitle": "用例模块",
+    "name": "PatchApiV1SectionsMove"
+  },
+  {
+    "type": "POST",
+    "url": "/api/v1/sections",
+    "title": "创建模块",
+    "description": "<p>创建的模块默认排在父模块下所有子模块最后。</p>",
+    "group": "用例模块",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": false,
+            "field": "parent_id",
+            "description": "<p>父模块 ID，若为第一层，父模块 ID 传 0</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "name",
+            "description": "<p>标题</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 201 Created\n{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"客户模块\",\n    \"parent_id\": 0,\n    \"sort\": 1\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/SectionController.php",
+    "groupTitle": "用例模块",
+    "name": "PostApiV1Sections"
+  },
+  {
+    "type": "GET",
+    "url": "/api/v1/users",
+    "title": "用户列表",
+    "description": "<p>可获取团队下所有用户的列表，若指定 <code>项目 ID</code> 则仅返回对该项目可见的用户列表</p>",
+    "group": "用户",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": true,
+            "field": "project_id",
+            "description": "<p>项目 ID，筛选仅对该项目可见的用户</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "ids",
+            "description": "<p>用户 ID 列表，多个使用英文逗号 <code>,</code> 分隔</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "account",
+            "description": "<p>账号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "name",
+            "description": "<p>姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "email",
+            "description": "<p>邮箱</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "status",
+            "description": "<p>用户状态，包括：<br> * <code>NORMAL</code>: 正常<br> * <code>FROZEN</code>: 冻结</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "role_names",
+            "description": "<p>用户角色，包括：<br> * <code>SA</code>: 超级管理员<br> * <code>ADMIN</code>: 管理员<br> * <code>MEMBER</code>: 成员<br> * <code>GUEST</code>: 访客<br> 多个使用英文逗号 <code>,</code> 分隔</p>"
+          }
+        ]
+      }
+    },
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 200 OK\n{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"account\": \"zs\",\n      \"name\": \"张三\",\n      \"email\": \"zah@gmail.com\",\n      \"mobile\": \"18662683421\",\n      \"role_name\": \"ADMIN\",\n      \"avatar\": \"http://images.feie.com/abc.png\",\n      \"status\": \"NORMAL\"\n    },\n    {\n      \"id\": 2,\n      \"account\": \"zs\",\n      \"name\": \"张三\",\n      \"email\": \"zah@gmail.com\",\n      \"mobile\": \"18662683421\",\n      \"role_name\": \"ADMIN\",\n      \"avatar\": \"http://images.feie.com/abc.png\",\n      \"status\": \"NORMAL\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "400": [
+          {
+            "group": "400",
+            "optional": false,
+            "field": "500001",
+            "description": "<p>项目不存在</p>"
+          }
+        ]
+      }
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/UserController.php",
+    "groupTitle": "用户",
+    "name": "GetApiV1Users"
+  },
+  {
+    "type": "GET",
+    "url": "/api/v1/users/:user_id",
+    "title": "用户详情",
+    "description": "<p>用户详情</p>",
+    "group": "用户",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Status: 200 OK\n{\n  \"data\": {\n    \"id\": 1,\n    \"account\": \"zs\",\n    \"name\": \"张三\",\n    \"email\": \"zah@gmail.com\",\n    \"mobile\": \"18662683421\",\n    \"role_name\": \"ADMIN\",\n    \"avatar\": \"http://images.feie.com/abc.png\",\n    \"status\": \"NORMAL\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/OpenApi/V1/UserController.php",
+    "groupTitle": "用户",
+    "name": "GetApiV1UsersUser_id"
+  }
+]
