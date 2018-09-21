@@ -1,6 +1,8 @@
 FROM takatost/docker-nginx-node-apidoc:latest
 
-MAINTAINER JohnWang <wangjiajun@vchangyi.com>
+MAINTAINER JohnWang <i@takato.st>
 
-RUN apk add yarn && \
-	yarn global add apidoc-markdown-vuepress
+RUN apk update && \
+	apk add --no-cache yarn && \
+	yarn global add apidoc-markdown-vuepress && \
+	apk del yarn
