@@ -16,7 +16,7 @@ var argv = require('optimist')
 		'template': 't'
 	})
 	.describe({
-		'path': 'Path to generated apidoc output. Where api_data.json & api_project.json resides.',
+		'path': 'Path to generated apidoc output. Where api_data.json resides.',
 		'output': 'Output path to write.',
 		'template': 'Path to EJS template file, if not specified default template will be used.',
 		'prepend': 'Prepend file after TOC.'
@@ -41,11 +41,8 @@ var sync = function (dirname) {
     }
 };
 
-var defTmplFile = argv.template ? (argv.template + '/default.md') : (__dirname + '/templates/default.md'),
-	apiDataTmplFile = argv.template ? (argv.template + '/api_data.md') : (__dirname + '/templates/api_data.md'),
+var apiDataTmplFile = argv.template ? (argv.template + '/api_data.md') : (__dirname + '/templates/api_data.md'),
 	apiData = JSON.parse(fs.readFileSync(argv.path + '/api_data.json')),
-	projData = JSON.parse(fs.readFileSync(argv.path + '/api_project.json')),
-	defTemplate = ejs.compile(fs.readFileSync(defTmplFile).toString()),
 	apiDataTemplate = ejs.compile(fs.readFileSync(apiDataTmplFile).toString());
 
 apiData = _.filter(apiData, function (entry) {
@@ -76,16 +73,8 @@ Object.keys(apiByGroup).forEach(function (key) {
 
 sync(argv.output);
 
-var data = {
-	project: projData,
-	data: apiByGroupAndName
-};
-
-data.prepend = argv.prepend ? fs.readFileSync(argv.prepend).toString() : null;
-fs.writeFileSync(argv.output + '/README.md', defTemplate(data));
-
 Object.keys(apiByGroupAndName).forEach(function (group) {
-	fs.writeFileSync(argv.output + '/' + group + '.md', apiDataTemplate({
+	fs.writeFileSync(argv.output + '/api-reference/' + group + '.md', apiDataTemplate({
 		group: group,
 		data: apiByGroupAndName,
 		object: apiObjects[group]
