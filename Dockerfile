@@ -4,5 +4,5 @@ MAINTAINER JohnWang <i@takato.st>
 
 RUN apk update && \
 	apk add --no-cache yarn && \
-	yarn global add apidoc-markdown-vuepress vuepress vuepress-theme-feie-api@0.3.3 && \
+	yarn global add apidoc-markdown-vuepress vuepress vuepress-theme-feie-api@0.3.4 && \
 	apk del yarn
