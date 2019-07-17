@@ -106,7 +106,8 @@ title: <%= group %>
 | 错误码     | 描述                           |
 |---------:|:--------------------------------------|
 <% data[group][sub].error.fields[g].forEach(function (param) { -%>
-| <%- param.field %> | <%- param.description.replace(/^<p>(.*)<\/p>$/, '$1') -%>
+| <%- param.field %> | <%- param.description.replace(/^<p>(.*)<\/p>$/, '$1') -%> | 
+
 <% }); //forech (group) parameter -%>
 <% }); //forech field -%>
 <% } //if error.fields -%>
