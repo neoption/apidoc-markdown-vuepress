@@ -1,6 +1,6 @@
 {
   "name": "apidoc-markdown-vuepress",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate API documentation in vuepress markdown format from apidoc data.",
   "main": "index.js",
   "scripts": {
