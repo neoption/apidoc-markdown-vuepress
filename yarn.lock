@@ -27,7 +27,7 @@ brace-expansion@^1.0.0:
 
 chalk@^0.4.0, chalk@~0.4.0:
   version "0.4.0"
-  resolved "http://registry.npmjs.org/chalk/-/chalk-0.4.0.tgz#5199a3ddcd0c1efe23bc08c1b027b06176e0c64f"
+  resolved "https://registry.npmjs.org/chalk/-/chalk-0.4.0.tgz#5199a3ddcd0c1efe23bc08c1b027b06176e0c64f"
   dependencies:
     ansi-styles "~1.0.0"
     has-color "~0.1.0"
@@ -58,7 +58,7 @@ d@~0.1.1:
   dependencies:
     es5-ext "~0.10.2"
 
-ejs@~0.8.5:
+ejs@~0.8.7:
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-0.8.8.tgz#ffdc56dcc35d02926dd50ad13439bbc54061d598"
 
@@ -148,7 +148,7 @@ inherits@2:
 
 inquirer@^0.5.1:
   version "0.5.1"
-  resolved "http://registry.npmjs.org/inquirer/-/inquirer-0.5.1.tgz#e9f2cd1ee172c7a32e054b78a03d4ddb0d7707f1"
+  resolved "https://registry.npmjs.org/inquirer/-/inquirer-0.5.1.tgz#e9f2cd1ee172c7a32e054b78a03d4ddb0d7707f1"
   dependencies:
     async "~0.8.0"
     chalk "~0.4.0"
@@ -160,7 +160,7 @@ inquirer@^0.5.1:
 
 lodash@~2.4.1:
   version "2.4.2"
-  resolved "http://registry.npmjs.org/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
+  resolved "https://registry.npmjs.org/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
 
 lru-queue@0.1:
   version "0.1.0"
@@ -188,15 +188,15 @@ minimatch@^2.0.1:
 
 minimist@0.0.8:
   version "0.0.8"
-  resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
+  resolved "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 minimist@~0.0.1:
   version "0.0.10"
-  resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+  resolved "https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
 mkdirp@^0.5.0:
   version "0.5.1"
-  resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
+  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
 
@@ -238,7 +238,7 @@ readline2@~0.1.0:
 
 release-it@0.0.12:
   version "0.0.12"
-  resolved "http://registry.npmjs.org/release-it/-/release-it-0.0.12.tgz#d5a51152660c3f27cdcd3ca2e9f9908b7552f85f"
+  resolved "https://registry.npmjs.org/release-it/-/release-it-0.0.12.tgz#d5a51152660c3f27cdcd3ca2e9f9908b7552f85f"
   dependencies:
     chalk "^0.4.0"
     glob "^4.0.2"
@@ -270,7 +270,7 @@ strip-ansi@~0.1.0:
 
 through@~2.3.4:
   version "2.3.8"
-  resolved "http://registry.npmjs.org/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
+  resolved "https://registry.npmjs.org/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
 timers-ext@0.1:
   version "0.1.5"
@@ -279,9 +279,9 @@ timers-ext@0.1:
     es5-ext "~0.10.14"
     next-tick "1"
 
-underscore@~1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.5.2.tgz#1335c5e4f5e6d33bbb4b006ba8c86a00f556de08"
+underscore@~1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.12.1.tgz#7bb8cc9b3d397e201cf8553336d262544ead829e"
 
 when@^3.2.3:
   version "3.7.8"
